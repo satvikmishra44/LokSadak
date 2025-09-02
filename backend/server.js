@@ -8,10 +8,10 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-    origin: 'https://loksadak.netlify.app/',
+    origin: 'https://loksadak.netlify.app',
     credentials: true}));
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
@@ -37,4 +37,5 @@ app.listen(port, () => {
     console.log('Server is running on port 3000');
 
 })
+
 
