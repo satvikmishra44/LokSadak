@@ -70,8 +70,8 @@ const login = async(req, res) => {
             // setting cookie for authentication
             res.cookie('token', token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: 'strict',
+                secure: true,
+                sameSite: 'none',
                 maxAge: 3*24*60*60*1000
             });
 
@@ -80,5 +80,6 @@ const login = async(req, res) => {
         console.error(err);
     }
 }
+
 
 module.exports = {register, login};
