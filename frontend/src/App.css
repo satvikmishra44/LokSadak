@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bubble";
+  src: url('fonts/Bubble.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'writing';
+  src: url('fonts/Handwritten.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'caption';
+  src: url('fonts/Caption.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'spot';
+  src: url('fonts/PackyGreat.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'typewriter';
+  src: url('fonts/TypeWriter.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: "MLA";
+  src: url("fonts/MLA.ttf") format('truetype');
+}
+
+body{
+  background-color: #fcf8e9;
+}
+
+.lok-heading{
+  font-family: 'writing';
+  font-weight: 800;
+  font-size: 7.5rem;
+  color: white;
+  color: white;
+  text-align: center;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(0, 213, 255, 0.8),
+    0 0 20px rgba(0, 213, 255, 0.6),
+    0 0 40px rgba(0, 213, 255, 0.5);
+}
+
+.caption {
+  font-family: 'caption';
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 800;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+
+.bubble-heading{
+  font-family: "Bubble";
+}
+
+@media (max-width: 768px) {
+  .lok-heading {
+    font-size: 6rem; /* medium screen and below */
+  }
+}
+
+@media (max-width: 640px) {
+  .lok-heading {
+    font-size: 4rem; /* small screen and below */
+  }
+  .button{
+    font-size: 1em;
+  }
+}
+
+.spot-heading{
+  font-family: 'spot';
+}
+
+/* Scan Button */
+
+.Scan-button {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a); /* Matches text-blue-600 and darker */
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.Scan-button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af); /* Slightly deeper blue on hover */
+  transform: translateY(-2px);
+}
+
+.Scan-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.Scan-button p {
+  margin: 0;
+  padding: 0;
+}
+
+.dikkat{
+  font-family: 'writing';
+}
+
+.type-text{
+  font-family: 'typewriter';
+}
+
+.MLA{
+  font-family: 'MLA';
+}
+
+/* Glass Card */
+/* Glass Navigation Container */
+.glass-nav {
+  --bg-color: rgba(255, 255, 255, 0.25);
+  --highlight: rgba(255, 255, 255, 0.75);
+  --text: #ffffff;
+  
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  z-index: 1000;
+}
+
+.glass-filter,
+.glass-overlay,
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-filter {
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+}
+
+.glass-overlay {
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.glass-specular {
+  z-index: 3;
+  box-shadow: inset 1px 1px 1px var(--highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 4;
+  padding: 16px;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.nav-item {
+
+  color: #ffffff;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 6px #00d5ff,
+    0 0 12px #00d5ff;
+}
+
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .glass-nav {
+    --bg-color: rgba(0, 0, 0, 0.25);
+    --highlight: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-popIn {
+  animation: popIn 0.35s ease-out forwards;
+}
