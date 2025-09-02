@@ -6,7 +6,7 @@ This is the **backend** of the **LokSadak**. It is built using **Node.js, Expres
 
 ## 📌 Features
 
-* 🔐 **Authentication & Authorization** (JWT-based for citizens, officers, and admins)
+* 🔐 **Authentication & Authorization** (Cookie-based for citizens, officers, and admins)
 * 🏗 **Road Project Management** (MLA/MP/Contractor/Company details)
 * 📝 **Complaint System** (citizens can file, track, and update complaints)
 * 📊 **Admin Dashboard Support** (manage all complaints and users)
